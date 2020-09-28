@@ -4,6 +4,8 @@
   "description": "Project to learn nodejs",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,24 @@
   "bugs": {
     "url": "https://github.com/TanguyChusseau/training-node/issues"
   },
-  "homepage": "https://github.com/TanguyChusseau/training-node#readme"
+  "homepage": "https://github.com/TanguyChusseau/training-node#readme",
+  "dependencies": {
+    "koa": "^2.13.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint --no-fix && prettier --check '**/*.{js,jsx,json,yaml,yml}'"
+    }
+  }
 }
