@@ -27,10 +27,10 @@ router.get('/tasks', async (ctx) => {
   ctx.body = tasks
 })
 
-router.del('/tasks/:id', async (req) => {
-  console.log(' id :', req.params.id)
-  tasks = tasks.filter(({ id }) => id !== req.params.id)
-  console.log(' newTasks :', tasks)
+// Delete route to delete a task with a matching id
+router.delete('/tasks/:id', async (ctx) => {
+  tasks = tasks.filter(({ id }) => id !== parseInt(ctx.params.id, 10))
+  ctx.body = tasks
 })
 
 server.use(async (ctx) => {
