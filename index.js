@@ -29,8 +29,8 @@ router.get('/tasks', async (ctx) => {
 
 router.del('/tasks/:id', async (req) => {
   console.log(' id :', req.params.id)
-  let newTasks = tasks.filter(({ id }) => id !== req.params.id)
-  console.log(' newTasks :', newTasks)
+  tasks = tasks.filter(({ id }) => id !== req.params.id)
+  console.log(' newTasks :', tasks)
 })
 
 server.use(async (ctx) => {
