@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/TanguyChusseau/training-node#readme",
   "dependencies": {
-    "koa": "^2.13.0"
+    "koa": "^2.13.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^9.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
