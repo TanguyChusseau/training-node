@@ -4,7 +4,7 @@ const KoaRouter = require('koa-router')
 
 const server = new Koa()
 const router = new KoaRouter()
-const tasks = [
+let tasks = [
   {
     id: 1,
     label: 'Groceries'
@@ -25,6 +25,12 @@ server.use(router.routes())
 // Get route to retrieve the tasks list
 router.get('/tasks', async (ctx) => {
   ctx.body = tasks
+})
+
+router.del('/tasks/:id', async (req) => {
+  console.log(' id :', req.params.id)
+  let newTasks = tasks.filter(({ id }) => id !== req.params.id)
+  console.log(' newTasks :', newTasks)
 })
 
 server.use(async (ctx) => {
