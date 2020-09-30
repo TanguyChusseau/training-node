@@ -28,6 +28,10 @@ router.get('/tasks', async (res) => {
   res.body = tasks
 })
 
+router.post('/tasks', (req) => {
+  tasks.push(req.body)
+})
+
 // Delete route to delete a task with a matching id
 router.delete('/tasks/:id', async (res) => {
   tasks = tasks.filter(({ id }) => id !== parseInt(res.params.id, 10))
