@@ -23,18 +23,18 @@ server.use(Json())
 server.use(router.routes())
 
 // Get route to retrieve the tasks list
-router.get('/tasks', async (ctx) => {
-  ctx.body = tasks
+router.get('/tasks', async (res) => {
+  res.body = tasks
 })
 
 // Delete route to delete a task with a matching id
-router.delete('/tasks/:id', async (ctx) => {
-  tasks = tasks.filter(({ id }) => id !== parseInt(ctx.params.id, 10))
-  ctx.body = tasks
+router.delete('/tasks/:id', async (res) => {
+  tasks = tasks.filter(({ id }) => id !== parseInt(res.params.id, 10))
+  res.body = tasks
 })
 
 server.use(async (ctx) => {
   ctx.body = { msg: 'Training Node API!' }
 })
 
-server.listen(3001, () => console.log('Server is started on Port 3001'))
+server.listen(3001)

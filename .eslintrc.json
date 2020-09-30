@@ -5,14 +5,7 @@
     "parser": "babel-eslint"
   },
   "rules": {
-    "no-console": "off",
-    "no-unused-vars": "warn",
     "radix": "warn",
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ]
+    "prettier/prettier": "error"
   }
 }
