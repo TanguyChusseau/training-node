@@ -1,9 +1,10 @@
 const Koa = require('koa')
-const Json = require('koa-json')
 const KoaRouter = require('koa-router')
+const json = require('koa-json')
 
-const server = new Koa()
+const app = new Koa()
 const router = new KoaRouter()
+
 let tasks = [
   {
     id: 1,
@@ -19,8 +20,8 @@ let tasks = [
   }
 ]
 
-server.use(Json())
-server.use(router.routes())
+app.use(json())
+app.use(router.routes())
 
 // Get route to retrieve the tasks list
 router.get('/tasks', async (res) => {
@@ -33,8 +34,8 @@ router.delete('/tasks/:id', async (res) => {
   res.body = tasks
 })
 
-server.use(async (ctx) => {
+app.use(async (ctx) => {
   ctx.body = { msg: 'Training Node API!' }
 })
 
-server.listen(3001)
+app.listen(3001)
