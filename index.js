@@ -41,8 +41,6 @@ router.delete('/tasks/:id', async (res) => {
   res.body = tasks.filter(({ id }) => id !== parseInt(res.params.id, 10))
 })
 
-app
-  .use(() => {
-    console.info('Server Started') // eslint-disable-line no-console
-  })
-  .listen(3001)
+app.listen(3001, () => {
+  console.info('Server Started')
+})
