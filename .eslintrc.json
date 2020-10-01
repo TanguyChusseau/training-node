@@ -7,11 +7,6 @@
   "rules": {
     "no-unused-vars": "warn",
     "radix": "warn",
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "crlf"
-      }
-    ]
+    "prettier/prettier": ["error"]
   }
 }
