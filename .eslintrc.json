@@ -5,8 +5,7 @@
     "parser": "babel-eslint"
   },
   "rules": {
-    "no-unused-vars": "warn",
     "radix": "warn",
-    "prettier/prettier": ["error"]
+    "prettier/prettier": "error"
   }
 }
