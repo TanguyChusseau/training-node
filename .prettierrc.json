@@ -1,15 +1,6 @@
 {
   "endOfLine": "auto",
-  "no-console": [
-    "error",
-    {
-      "allow": [
-        "warn",
-        "info",
-        "error"
-      ]
-    }
-  ],
+  "no-console": 0,
   "printWidth": 120,
   "semi": false,
   "singleQuote": true,
