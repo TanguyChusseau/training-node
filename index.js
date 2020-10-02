@@ -1,6 +1,7 @@
 const Koa = require('koa')
 const Router = require('koa-router')
 const bodyParser = require('koa-bodyparser')
+const cors = require('@koa/cors')
 const json = require('koa-json')
 
 const app = new Koa()
@@ -21,8 +22,9 @@ let tasks = [
   }
 ]
 
-app.use(json())
 app.use(bodyParser())
+app.use(cors())
+app.use(json())
 app.use(router.routes())
 
 // GET route to retrieve the tasks list
