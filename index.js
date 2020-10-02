@@ -42,5 +42,5 @@ router.delete('/tasks/:id', async (res) => {
 })
 
 app.listen(3001, () => {
-  console.info('Server Started') // eslint-disable-line no-console
+  console.info('Server Started')
 })
