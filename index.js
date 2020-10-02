@@ -7,7 +7,7 @@ const json = require('koa-json')
 const app = new Koa()
 const router = new Router()
 
-let tasks = [
+const tasks = [
   {
     id: 1,
     label: 'Groceries'
@@ -40,8 +40,9 @@ router.post('/tasks', (ctx) => {
 
 // DELETE route to delete a task with a matching id
 router.delete('/tasks/:id', async (res) => {
-  tasks = tasks.filter(({ id }) => id !== parseInt(res.params.id, 10))
-  res.body = tasks
+  res.body = tasks.filter(({ id }) => id !== parseInt(res.params.id, 10))
 })
 
-app.listen(3001)
+app.listen(3001, () => {
+  console.info('Server Started')
+})
