@@ -1,6 +1,6 @@
 {
   "endOfLine": "auto",
-  "no-console": 0,
+  "no-console": "off",
   "printWidth": 120,
   "semi": false,
   "singleQuote": true,
