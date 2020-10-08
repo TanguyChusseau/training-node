@@ -1,8 +1,9 @@
-const Koa = require('koa')
-const Router = require('koa-router')
-const bodyParser = require('koa-bodyparser')
-const cors = require('@koa/cors')
-const json = require('koa-json')
+import * as Koa from 'koa'
+import * as Router from 'koa-router'
+
+import * as bodyParser from 'koa-bodyparser'
+import * as cors from '@koa/cors'
+import * as json from 'koa-json'
 
 const app = new Koa()
 const router = new Router()
@@ -28,18 +29,18 @@ app.use(json())
 app.use(router.routes())
 
 // GET route to retrieve the tasks list
-router.get('/tasks', (res) => {
+router.get('/tasks', (res: any) => {
   res.body = tasks
 })
 
 // POST route to add a task
-router.post('/tasks', (ctx) => {
+router.post('/tasks', (ctx: any) => {
   tasks.push(ctx.request.body)
   ctx.body = tasks
 })
 
 // DELETE route to delete a task with a matching id
-router.delete('/tasks/:id', async (res) => {
+router.delete('/tasks/:id', (res: any) => {
   tasks = tasks.filter(({ id }) => id !== parseInt(res.params.id, 10))
   res.body = tasks
 })
