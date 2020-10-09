@@ -29,20 +29,20 @@ app.use(json())
 app.use(router.routes())
 
 // GET route to retrieve the tasks list
-router.get('/tasks', (res: any) => {
-  res.body = tasks
+router.get('/tasks', (request: any) => {
+  request.body = tasks
 })
 
 // POST route to add a task
-router.post('/tasks', (ctx: any) => {
-  tasks.push(ctx.request.body)
-  ctx.body = tasks
+router.post('/tasks', (request: any) => {
+  tasks.push(request.request.body)
+  request.body = tasks
 })
 
 // DELETE route to delete a task with a matching id
-router.delete('/tasks/:id', (res: any) => {
-  tasks = tasks.filter(({ id }) => id !== parseInt(res.params.id, 10))
-  res.body = tasks
+router.delete('/tasks/:id', (request: any) => {
+  tasks = tasks.filter(({ id }) => id !== parseInt(request.params.id, 10))
+  request.body = tasks
 })
 
 app.listen(3001, () => {
