@@ -4,11 +4,12 @@ import * as Router from 'koa-router'
 import * as bodyParser from 'koa-bodyparser'
 import * as cors from '@koa/cors'
 import * as json from 'koa-json'
+import { Task } from './model/task'
 
 const app = new Koa()
 const router = new Router()
 
-let tasks = [
+let tasks: Task[] = [
   {
     id: 1,
     label: 'Groceries'
