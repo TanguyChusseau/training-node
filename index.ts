@@ -1,6 +1,5 @@
 import * as Koa from 'koa'
 import * as Router from 'koa-router'
-
 import * as bodyParser from 'koa-bodyparser'
 import * as cors from '@koa/cors'
 import * as json from 'koa-json'
@@ -49,6 +48,7 @@ router.delete('/tasks/:id', (request) => {
   request.body = tasks
 })
 
-app.listen(3001, () => {
-  console.info('Server Started')
+const SERVER_PORT = 3001
+app.listen(SERVER_PORT, () => {
+  console.info(`Server Started on port ${SERVER_PORT}`)
 })
