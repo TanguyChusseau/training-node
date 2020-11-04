@@ -1,7 +1,8 @@
 import * as Router from 'koa-router'
-import { taskController } from './controller/task-controller'
+import { createFactory } from '../model/factory/container'
 
 const router = new Router()
+let taskController = createFactory().controller.taskController
 
 // GET route to retrieve the tasks list
 router.get('/tasks', (request) => {
@@ -17,3 +18,4 @@ router.post('/tasks', (request) => {
 router.delete('/tasks/:id', (request) => {
   taskController.deleteTask(request)
 })
+export default router

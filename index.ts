@@ -1,13 +1,10 @@
 import * as Koa from 'koa'
-import * as Router from 'koa-router'
 import * as bodyParser from 'koa-bodyparser'
 import * as cors from '@koa/cors'
 import * as json from 'koa-json'
-
-import { Task } from './model/task'
+import router from './api/router'
 
 const app = new Koa()
-const router = new Router()
 
 app.use(bodyParser())
 app.use(cors())
