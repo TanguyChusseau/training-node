@@ -5,8 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "lint": "eslint",
-    "serve": "nodemon index.ts",
-    "start": "ts-node index.ts",
+    "serve": "nodemon server.ts",
+    "start": "ts-node server.ts",
     "test:unit": "jest"
   },
   "repository": {
@@ -30,7 +30,9 @@
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
     "koa-router": "^9.4.0",
+    "sinon": "^9.2.1",
     "ts-node": "^9.0.0",
+    "ts-sinon": "^2.0.1",
     "typescript": "^4.0.3"
   },
   "devDependencies": {

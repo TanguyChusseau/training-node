@@ -2,6 +2,11 @@ export interface Task {
   id: number
   label: string
 }
+
+export interface CreateTask {
+  label: string
+}
+
 export const INIT_TASKS: Task[] = [
   {
     id: 1,
