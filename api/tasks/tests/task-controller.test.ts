@@ -1,5 +1,5 @@
-import { createFactory } from '../model/factory/container'
-import { CreateTask, INIT_TASKS } from '../model/task'
+import { createFactory } from '../../container'
+import { CreateTask, INIT_TASKS } from '../domain/task'
 import { Request } from 'koa'
 import { StubbedInstance, stubInterface } from 'ts-sinon'
 
@@ -17,7 +17,9 @@ describe('Unit | Controller | TaskController', () => {
   describe('#getTasks', () => {
     describe('when tasks list exists', () => {
       it('should return 200 OK with tasks list', () => {
+        //When
         taskController.getTasks(request)
+        //Then
         expect(request.response.status).toStrictEqual(200)
         expect(request.response.body).toBe(tasks)
       })
@@ -31,9 +33,10 @@ describe('Unit | Controller | TaskController', () => {
         const newTask: CreateTask = {
           label: 'test'
         }
-        //Then
+        //When
         request.body = newTask
         taskController.addTask(request)
+        //Then
         expect(request.response.status).toStrictEqual(200)
         expect(request.response.body[request.response.body.length - 1].label).toStrictEqual(newTask.label)
       })
@@ -45,8 +48,9 @@ describe('Unit | Controller | TaskController', () => {
       it('should throw 404 Not Found', () => {
         //Given
         request.query.id = 4
-        //Then
+        //When
         taskController.deleteTask(request)
+        //Then
         expect(request.response.status).toStrictEqual(404)
       })
     })
@@ -55,8 +59,9 @@ describe('Unit | Controller | TaskController', () => {
       it('should return 200 OK with updated tasks list', () => {
         //Given
         request.query.id = 3
-        //Then
+        //When
         taskController.deleteTask(request)
+        //Then
         expect(request.response.status).toStrictEqual(200)
         expect(request.response.body.length).toStrictEqual(tasks.length - 1)
       })

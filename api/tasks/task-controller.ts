@@ -1,4 +1,4 @@
-import { INIT_TASKS, Task } from '../../model/task'
+import { INIT_TASKS, Task } from './domain/task'
 import { Request } from 'koa'
 
 let tasks = INIT_TASKS
@@ -19,7 +19,6 @@ export class TaskController {
 
   deleteTask(request: Request) {
     let idToDelete = request.query.id
-    console.info('request query = ', request.query)
     if (!tasks.find((task) => task.id === idToDelete)) {
       request.response.status = 404
       return

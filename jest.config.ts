@@ -8,6 +8,6 @@ module.exports = {
   transform: {
     '^.+\\.(ts)$': 'ts-jest'
   },
-  testMatch: ['<rootDir>/test/*.test.(ts|js)'],
+  testMatch: ['<rootDir>/tests/*.test.ts', '<rootDir>/api/tasks/tests/*.test.ts'],
   testEnvironment: 'node'
 }

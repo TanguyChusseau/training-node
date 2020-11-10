@@ -1,5 +1,5 @@
 import * as Router from 'koa-router'
-import { createFactory } from '../model/factory/container'
+import { createFactory } from './container'
 
 const router = new Router()
 let taskController = createFactory().taskController

@@ -1,4 +1,4 @@
-import { TaskController } from '../../api/controller/task-controller'
+import { TaskController } from './tasks/task-controller'
 
 export function createFactory() {
   const controller = {
