@@ -4,5 +4,7 @@ export function createFactory() {
   const controller = {
     taskController: new TaskController()
   }
-  return { controller }
+  return { ...controller }
 }
+
+export default createFactory()
