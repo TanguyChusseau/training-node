@@ -3,24 +3,54 @@ import { CreateTask } from '../api/tasks/domain/task'
 const request = require('supertest')
 const server = require('../server')
 
-beforeAll(() => {
-  console.log(' Jest Starting ! ')
-})
-
 afterAll(() => {
   server.close()
   console.log(' server closed !')
 })
+describe('#Get', () => {
+  describe('when tasks list exist', () => {
+    it('should return 200 with the list', async () => {
+      //Given
+      //When
+      const res = await request(server).get('/tasks')
+      //Then
+      expect(res.statusCode).toEqual(200)
+    })
+  })
+})
 
 describe('#Post', () => {
   describe('when a new task is added', () => {
-    it('should return 200 OK with updated tasks list', () => {
+    it('should return 200 OK with updated tasks list', async () => {
       //Given
       const newTask: CreateTask = {
         label: 'test'
       }
       //When
-      const res = request(server).post('/task').send(newTask)
+      const res = await request(server).post('/tasks').send(newTask)
+      //Then
+      expect(res.statusCode).toEqual(200)
+    })
+  })
+})
+
+describe('#Delete', () => {
+  describe('when a task to delete does not exist', () => {
+    it('should return 404 Not Found', async () => {
+      //Given
+      let url = '/tasks/' + 4
+      //When
+      const res = await request(server).delete('url')
+      //Then
+      expect(res.statusCode).toEqual(404)
+    })
+  })
+  describe('when a task to delete does not exist', () => {
+    it('should return 200 Ok with updated list', async () => {
+      //Given
+      let url = '/tasks/' + 3
+      //When
+      const res = await request(server).delete(url)
       //Then
       expect(res.statusCode).toEqual(200)
     })
