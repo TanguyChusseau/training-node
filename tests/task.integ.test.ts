@@ -5,7 +5,7 @@ const server = require('../server')
 
 afterAll(() => {
   server.close()
-  console.log(' server closed !')
+  console.info(' server closed !')
 })
 describe('#Get', () => {
   describe('when tasks list exist', () => {
@@ -38,9 +38,10 @@ describe('#Delete', () => {
   describe('when a task to delete does not exist', () => {
     it('should return 404 Not Found', async () => {
       //Given
-      let url = '/tasks/' + 4
+      const idToDelete = 4
+      const url = '/tasks/' + idToDelete
       //When
-      const res = await request(server).delete('url')
+      const res = await request(server).delete(url).query({ id: idToDelete })
       //Then
       expect(res.statusCode).toEqual(404)
     })
@@ -48,9 +49,10 @@ describe('#Delete', () => {
   describe('when a task to delete does not exist', () => {
     it('should return 200 Ok with updated list', async () => {
       //Given
-      let url = '/tasks/' + 3
+      const idToDelete = 3
+      const url = '/tasks/' + idToDelete
       //When
-      const res = await request(server).delete(url)
+      const res = await request(server).delete(url).query({ id: idToDelete })
       //Then
       expect(res.statusCode).toEqual(200)
     })

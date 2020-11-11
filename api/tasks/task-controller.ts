@@ -19,7 +19,7 @@ export class TaskController {
 
   deleteTask(request: Request) {
     let idToDelete = request.query.id
-    if (!tasks.find((task) => task.id === idToDelete)) {
+    if (!tasks.find((task) => task.id === parseInt(idToDelete, 10))) {
       request.response.status = 404
       return
     }
