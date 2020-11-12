@@ -20,7 +20,7 @@ describe('Unit | Controller | TaskController', () => {
         //When
         taskController.getTasks(request)
         //Then
-        ecxpect(request.response.status).toStrictEqual(200)
+        expect(request.response.status).toStrictEqual(200)
         expect(request.response.body).toBe(tasks)
       })
     })

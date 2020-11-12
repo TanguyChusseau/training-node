@@ -9,5 +9,14 @@ module.exports = {
     '^.+\\.(ts)$': 'ts-jest'
   },
   testMatch: ['<rootDir>/tests/*.test.ts', '<rootDir>/api/tasks/tests/*.test.ts'],
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  reporters: [
+    'default',
+    [
+      './node_modules/jest-html-reporter',
+      {
+        pageTittle: 'Test Report'
+      }
+    ]
+  ]
 }
