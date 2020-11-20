@@ -1,8 +1,8 @@
 import * as Router from 'koa-router'
-import { createFactory } from './container'
+import container from './container'
 
 const router = new Router()
-let taskController = createFactory().taskController
+let taskController = container.taskController
 
 // GET route to retrieve the tasks list
 router.get('/tasks', ({ request }) => {

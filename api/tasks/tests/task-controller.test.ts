@@ -1,9 +1,10 @@
-import { createFactory } from '../../container'
-import { CreateTask, INIT_TASKS } from '../domain/task'
 import { Request } from 'koa'
 import { StubbedInstance, stubInterface } from 'ts-sinon'
 
-let taskController = createFactory().taskController
+import { CreateTask, INIT_TASKS } from '../domain/task'
+import container from '../../container'
+
+let taskController = container.taskController
 
 describe('Unit | Controller | TaskController', () => {
   let request: StubbedInstance<Request>
