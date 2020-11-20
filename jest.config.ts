@@ -13,9 +13,9 @@ module.exports = {
   reporters: [
     'default',
     [
-      './node_modules/jest-html-reporter',
+      'jest-html-reporters',
       {
-        pageTittle: 'Test Report'
+        pageTittle: 'Tests Back Report'
       }
     ]
   ]

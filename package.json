@@ -26,6 +26,7 @@
     "@types/koa-json": "^2.0.18",
     "@types/koa-router": "^7.4.1",
     "@types/koa__cors": "^3.0.2",
+    "jest-html-reporters": "^2.1.0",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",

@@ -3,6 +3,7 @@ node_modules
 /dist
 coverage
 test-report.html
+jest_html_reporters.html
 
 # local env files
 .env.local
