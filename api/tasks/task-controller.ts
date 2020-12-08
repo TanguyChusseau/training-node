@@ -1,5 +1,6 @@
-import { INIT_TASKS, Task } from './domain/task'
 import { Request } from 'koa'
+
+import { INIT_TASKS, Task } from './domain/task'
 
 let tasks = INIT_TASKS
 
