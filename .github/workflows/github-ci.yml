@@ -1,0 +1,17 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Jobs back end 
+
+language: node_js
+node_js:
+  - '12'
+cache:
+  yarn: true
+jobs:
+  include:
+    - stage: Test
+      name: Tests
+      script: yarn test:unit
+    - stage: Lint
+      name: Lint
+      script: yarn lint
