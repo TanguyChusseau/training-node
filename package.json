@@ -5,9 +5,9 @@
   "main": "index.ts",
   "scripts": {
     "lint": "eslint",
-    "serve": "nodemon index.ts",
-    "start": "ts-node index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "nodemon server.ts",
+    "start": "ts-node server.ts",
+    "test:unit": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,14 +26,19 @@
     "@types/koa-json": "^2.0.18",
     "@types/koa-router": "^7.4.1",
     "@types/koa__cors": "^3.0.2",
+    "jest-html-reporters": "^2.1.0",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-json": "^2.0.2",
     "koa-router": "^9.4.0",
+    "sinon": "^9.2.1",
+    "supertest": "^6.0.1",
     "ts-node": "^9.0.0",
+    "ts-sinon": "^2.0.1",
     "typescript": "^4.0.3"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.15",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0",
     "eslint-config-airbnb-base": "^14.2.0",
@@ -42,8 +47,11 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "jest-html-reporter": "^3.3.0",
     "nodemon": "^2.0.4",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.4.3"
   },
   "husky": {
     "hooks": {
