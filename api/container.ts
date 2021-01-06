@@ -4,7 +4,7 @@ import { Sequelize } from 'sequelize'
 export function createFactory() {
   const controller = {
     taskController: new TaskController(),
-    connectBDD: new Sequelize('', { dialect: 'mysql', host: 'localhost' })
+    connectBDD: new Sequelize('')
   }
   return { ...controller }
 }
