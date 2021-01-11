@@ -59,12 +59,14 @@ describe('Unit | Controller | TaskController', () => {
     describe('when task to delete exists', () => {
       it('should return 200 OK with updated tasks list', () => {
         //Given
-        request.query.id = 3
+        request.query.id = 2
         //When
         taskController.deleteTask(request)
         //Then
         expect(request.response.status).toStrictEqual(200)
-        expect(request.response.body.length).toStrictEqual(tasks.length - 1)
+        expect(request.response.body).not.toContainEqual({
+          id: 2, label: 'Training Vue'
+        })
       })
     })
   })
