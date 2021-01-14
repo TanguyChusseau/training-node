@@ -65,7 +65,8 @@ describe('Unit | Controller | TaskController', () => {
         //Then
         expect(request.response.status).toStrictEqual(200)
         expect(request.response.body).not.toContainEqual({
-          id: 2, label: 'Training Vue'
+          id: 2,
+          label: 'Training Vue'
         })
       })
     })
